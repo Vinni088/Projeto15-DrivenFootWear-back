@@ -1,10 +1,10 @@
 import { Router } from "express"
-import recipeRouter from "./receitas.routes.js"
-import userRouter from "./usuarios.routes.js"
+import buyRouter from "./buy.routes.js"
+import userRouter from "./user.routes.js"
 
-const router = Router()
+const router = Router();
 
-router.use(userRouter)
-router.use(recipeRouter)
+router.use(userRouter);
+router.use(buyRouter);
 
 export default router
