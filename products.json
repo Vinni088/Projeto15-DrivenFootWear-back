@@ -1,0 +1,302 @@
+[
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Sapato de salto alto preto",
+      "preco": 199.99,
+      "foto": "https://example.com/foto1.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Sapato social marrom",
+      "preco": 149.99,
+      "foto": "https://example.com/foto2.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Sapatilha vermelha",
+      "preco": 79.99,
+      "foto": "https://example.com/foto3.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Tênis esportivo preto",
+      "preco": 129.99,
+      "foto": "https://example.com/foto4.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Bota de couro marrom",
+      "preco": 219.99,
+      "foto": "https://example.com/foto5.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Sapato casual azul",
+      "preco": 89.99,
+      "foto": "https://example.com/foto6.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Sandalia de salto alto",
+      "preco": 149.99,
+      "foto": "https://example.com/foto7.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Tênis esportivo branco",
+      "preco": 119.99,
+      "foto": "https://example.com/foto8.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Sapato social preto",
+      "preco": 169.99,
+      "foto": "https://example.com/foto9.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Sapatênis marrom",
+      "preco": 99.99,
+      "foto": "https://example.com/foto10.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Tênis esportivo rosa",
+      "preco": 129.99,
+      "foto": "https://example.com/foto11.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Sapato social preto",
+      "preco": 189.99,
+      "foto": "https://example.com/foto12.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Sapatilha preta",
+      "preco": 69.99,
+      "foto": "https://example.com/foto13.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Bota de couro marrom",
+      "preco": 239.99,
+      "foto": "https://example.com/foto14.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Sapato de salto alto nude",
+      "preco": 189.99,
+      "foto": "https://example.com/foto15.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Sapato social marrom",
+      "preco": 169.99,
+      "foto": "https://example.com/foto16.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Sandália rasteira dourada",
+      "preco": 89.99,
+      "foto": "https://example.com/foto17.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Tênis esportivo preto e branco",
+      "preco": 139.99,
+      "foto": "https://example.com/foto18.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Sapatilha azul",
+      "preco": 79.99,
+      "foto": "https://example.com/foto19.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Sapato casual marrom",
+      "preco": 99.99,
+      "foto": "https://example.com/foto20.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Bota de couro preta",
+      "preco": 219.99,
+      "foto": "https://example.com/foto21.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Sapato social marrom",
+      "preco": 159.99,
+      "foto": "https://example.com/foto22.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Sapato de salto alto vermelho",
+      "preco": 199.99,
+      "foto": "https://example.com/foto23.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Tênis esportivo cinza",
+      "preco": 119.99,
+      "foto": "https://example.com/foto24.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Sandália de salto alto preta",
+      "preco": 149.99,
+      "foto": "https://example.com/foto25.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Sapatênis preto",
+      "preco": 89.99,
+      "foto": "https://example.com/foto26.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Tênis esportivo branco e rosa",
+      "preco": 129.99,
+      "foto": "https://example.com/foto27.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Sapato social preto",
+      "preco": 179.99,
+      "foto": "https://example.com/foto28.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Sapatilha floral",
+      "preco": 69.99,
+      "foto": "https://example.com/foto29.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Bota de couro preta",
+      "preco": 229.99,
+      "foto": "https://example.com/foto30.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Sapato de salto alto azul",
+      "preco": 189.99,
+      "foto": "https://example.com/foto31.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Sapato social marrom",
+      "preco": 149.99,
+      "foto": "https://example.com/foto32.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Sandália rasteira preta",
+      "preco": 79.99,
+      "foto": "https://example.com/foto33.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Tênis esportivo vermelho",
+      "preco": 129.99,
+      "foto": "https://example.com/foto34.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Sapatilha rosa",
+      "preco": 69.99,
+      "foto": "https://example.com/foto35.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Sapato casual azul",
+      "preco": 99.99,
+      "foto": "https://example.com/foto36.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Bota de couro marrom",
+      "preco": 219.99,
+      "foto": "https://example.com/foto37.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Sapato social preto",
+      "preco": 179.99,
+      "foto": "https://example.com/foto38.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Sapato de salto alto rosa",
+      "preco": 199.99,
+      "foto": "https://example.com/foto39.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Tênis esportivo preto",
+      "preco": 119.99,
+      "foto": "https://example.com/foto40.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Sapato social azul",
+      "preco": 169.99,
+      "foto": "https://example.com/foto41.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Sapatênis marrom",
+      "preco": 89.99,
+      "foto": "https://example.com/foto42.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Tênis esportivo preto e branco",
+      "preco": 129.99,
+      "foto": "https://example.com/foto43.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Sapato social preto",
+      "preco": 189.99,
+      "foto": "https://example.com/foto44.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Sapatilha preta",
+      "preco": 69.99,
+      "foto": "https://example.com/foto45.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Bota de couro marrom",
+      "preco": 239.99,
+      "foto": "https://example.com/foto46.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Sapato de salto alto nude",
+      "preco": 189.99,
+      "foto": "https://example.com/foto47.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Sapato casual marrom",
+      "preco": 99.99,
+      "foto": "https://example.com/foto48.jpg"
+    },
+    {
+      "tipo": "Sapato feminino",
+      "nome": "Sandália rasteira dourada",
+      "preco": 89.99,
+      "foto": "https://example.com/foto49.jpg"
+    },
+    {
+      "tipo": "Sapato masculino",
+      "nome": "Tênis esportivo preto e branco",
+      "preco": 139.99,
+      "foto": "https://example.com/foto50.jpg"
+    }
+  ]  
