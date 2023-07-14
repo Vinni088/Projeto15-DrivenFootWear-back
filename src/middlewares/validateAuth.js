@@ -1,20 +1,22 @@
 import { db } from "../database/database.connection.js"
 
 export async function validateAuth(req, res, next) {
-    const { authorization } = req.headers
-    const token = authorization?.replace("Bearer ", "")
+    const { authorization } = req.headers;
+    const token = authorization?.replace("Bearer ", "");
+
+    console.log(token);
 
     if (!token) return res.sendStatus(401)
 
     try {
-        const sessao = await db.collection("sessao").findOne({ token })
-        if (!sessao) return res.sendStatus(401)
+        const session = await db.collection("session").findOne({ token })
+        if (!session) return res.sendStatus(401)
 
-        res.locals.sessao = sessao
+        res.locals.session = session;
 
-        next()
+        next();
 
     } catch (err) {
-        res.status(500).send(err.message)
+        return res.status(500).send(err.message);
     }
 }
