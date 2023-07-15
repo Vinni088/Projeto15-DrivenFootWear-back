@@ -25,7 +25,7 @@ fs.readFile(jsonFilePath, 'utf8', (err, data) => {
         }
 
         // Close the MongoDB connection
-        client.close();
+        db.close();
     });
 });
 
