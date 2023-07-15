@@ -21,57 +21,91 @@ export async function getProductsById(req, res) {
     }
 }
 
-export async function deleteRecipe(req, res) {
-    const { id } = req.params
+export async function getCart(req,res) {
+    const { email } = res.locals.session;
 
     try {
-        const result = await db.collection("receitas").deleteOne({ _id: new ObjectId(id) })
-        if (result.deletedCount === 0) return res.status(404).send("Essa receita não existe!")
+        const cartUser = await db.collection("cart").findOne({ email });
+        return res.status(200).send(cartUser);
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }    
+}
 
-        res.status(204).send("Receita deletada com sucesso!")
-    } catch (err) {
-        res.status(500).send(err.message)
+export async function addItemCart(req,res) {
+    const { email } = res.locals.session;
+    const productId = req.params.productId;
+
+    let changeBalance;
+
+    try {
+        const product = await db.collection("products").findOne({ productId });
+
+        if (!product) {
+            return res.status(404).send("Produto não existe!");
+        }
+
+        const item = { value: product.price, productId: productId };
+        const cart = await db.collection("cart").findOne({ email });
+        cart.itens.push(item);
+
+        await db
+        .collection("cart")
+        .updateOne(
+            { email },
+            {
+                $set: {
+                    itens: cart.itens,
+                    balance: cart.balance + product.price,
+                },
+            }
+        );    
+        return res.sendStatus(201);
+    } catch (error) {
+        return res.status(500).send(error.message);
     }
 }
 
-export async function deleteRecipesByIngredients(req, res) {
-    const { filtroIngredientes } = req.params
+export async function removeItemCart(req,res) {
+    const { email } = res.locals.session;
+    const productId = req.params.productId;
+
+    let changeBalance;
 
     try {
-        await db.collection("receitas").deleteMany({ ingredientes: filtroIngredientes })
-        res.sendStatus(204)
-    } catch (err) {
-        res.status(500).send(err.message)
+        const product = await db.collection("products").findOne({ productId });
+
+        if (!product) {
+            return res.status(404).send("Produto não existe!");
+        }
+
+        const cart = await db.collection("cart").findOne({ email });
+        let indexToRemove = -1;
+        for (let i = 0; i < cart.itens.length; i++) {
+            if (cart.itens[i].productId === productId) {
+                indexToRemove = i;
+                break;
+            }
+        }
+
+        if (indexToRemove !== -1) {
+            cart.itens.splice(indexToRemove, 1);
+        }
+
+        await db
+        .collection("cart")
+        .updateOne(
+            { email },
+            {
+                $set: {
+                    itens: cart.itens,
+                    balance: cart.balance - product.price,
+                },
+            }
+        );    
+        return res.sendStatus(201);
+    } catch (error) {
+        return res.status(500).send(error.message);
     }
-}
 
-export async function editRecipe(req, res) {
-    const { id } = req.params
-    const { titulo, preparo, ingredientes } = req.body
-
-    try {
-        const result = await db.collection('receitas').updateOne(
-            { _id: new ObjectId(id) },
-            { $set: { titulo, preparo, ingredientes } }
-        )
-        if (result.matchedCount === 0) return res.status(404).send("esse item não existe!")
-        res.send("Receita atualizada!")
-    } catch (err) {
-        res.status(500).send(err.message)
-    }
-}
-
-export async function editRecipesByIngridients(req, res) {
-    const { filtroIngredientes } = req.params
-    const { titulo, ingredientes, preparo } = req.body
-
-    try {
-        await db.collection('receitas').updateMany(
-            { ingredientes: { $regex: filtroIngredientes, $options: 'i' } },
-            { $set: { titulo } }
-        )
-        res.sendStatus(200)
-    } catch (err) {
-        return res.status(500).send(err.message)
-    }
 }
