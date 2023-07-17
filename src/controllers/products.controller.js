@@ -162,3 +162,14 @@ export async function removeItemCart(req,res) {
     }
 
 }
+
+export async function getShopping(req,res) {
+    const { email } = res.locals.session;
+
+    try {
+        const userShopping = await db.collection("shopping").findOne({ email });
+        return res.status(200).send(userShopping);
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }    
+}
