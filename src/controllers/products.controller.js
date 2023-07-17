@@ -36,18 +36,16 @@ export async function addItemCart(req,res) {
     const { email } = res.locals.session;
     const productId = req.params.productId;
 
-    let changeBalance;
 
     try {
-        const product = await db.collection("products").findOne({ productId });
+        const product = await db.collection("products").findOne({ _id: new ObjectId(productId) });
 
         if (!product) {
             return res.status(404).send("Produto não existe!");
         }
 
-        const item = { value: product.price, productId: productId };
         const cart = await db.collection("cart").findOne({ email });
-        cart.itens.push(item);
+        cart.itens.push(productId);
 
         await db
         .collection("cart")
@@ -56,7 +54,6 @@ export async function addItemCart(req,res) {
             {
                 $set: {
                     itens: cart.itens,
-                    balance: cart.balance + product.price,
                 },
             }
         );    
