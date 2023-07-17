@@ -15,7 +15,7 @@ export async function signup(req, res) {
         const hash = bcrypt.hashSync(password, 10);
 
         await db.collection("users").insertOne({ name, email, password: hash });
-        await db.collection("cart").insertOne({ name, email, balance: 0, itens: [] });
+        await db.collection("cart").insertOne({ name, email, itens: [] });
         res.sendStatus(201);
     } catch (err) {
         return res.status(500).send(err.message);

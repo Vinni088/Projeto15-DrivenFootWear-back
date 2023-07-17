@@ -67,10 +67,8 @@ export async function removeItemCart(req,res) {
     const { email } = res.locals.session;
     const productId = req.params.productId;
 
-    let changeBalance;
-
     try {
-        const product = await db.collection("products").findOne({ productId });
+        const product = await db.collection("products").findOne({ _id: new ObjectId(productId) });
 
         if (!product) {
             return res.status(404).send("Produto não existe!");
@@ -79,7 +77,7 @@ export async function removeItemCart(req,res) {
         const cart = await db.collection("cart").findOne({ email });
         let indexToRemove = -1;
         for (let i = 0; i < cart.itens.length; i++) {
-            if (cart.itens[i].productId === productId) {
+            if (cart.itens[i] === productId) {
                 indexToRemove = i;
                 break;
             }
@@ -96,7 +94,6 @@ export async function removeItemCart(req,res) {
             {
                 $set: {
                     itens: cart.itens,
-                    balance: cart.balance - product.price,
                 },
             }
         );    
