@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { getProducts, getProductsById, getCart, addItemCart, removeItemCart } from "../controllers/products.controller.js"
+import { getProducts, getProductsById, getCart, addItemCart, removeItemCart, checkout } from "../controllers/products.controller.js"
 import { validateSchema } from "../middlewares/validateSchema.js"
 import { validateAuth } from "../middlewares/validateAuth.js"
 
@@ -12,5 +12,5 @@ buyRouter.get("/products/:id", validateAuth, getProductsById);
 buyRouter.get("/cart", validateAuth, getCart);
 buyRouter.post("/cart/:productId", validateAuth, addItemCart);
 buyRouter.delete("/cart/:productId", validateAuth, removeItemCart);
-
+buyRouter.post("/checkout", validateAuth, checkout);
 export default buyRouter

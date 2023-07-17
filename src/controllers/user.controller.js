@@ -16,6 +16,7 @@ export async function signup(req, res) {
 
         await db.collection("users").insertOne({ name, email, password: hash });
         await db.collection("cart").insertOne({ name, email, itens: [] });
+        await db.collection("shopping").insertOne({ name, email, itens: [] });
         res.sendStatus(201);
     } catch (err) {
         return res.status(500).send(err.message);

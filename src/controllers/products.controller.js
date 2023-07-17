@@ -63,6 +63,65 @@ export async function addItemCart(req,res) {
     }
 }
 
+export async function checkout(req,res) {
+    const { email } = res.locals.session;
+    const { payment } = req.body;
+
+    try {
+        const cart = await db.collection("cart").findOne({ email });
+
+        let products_list = [];
+        let balance_cart = 0;
+
+        for (let i = 0; i < cart.itens.length; i++) {
+            const product = await db.collection("products").findOne({_id: new ObjectId(cart.itens[i])});
+            if (!product) {
+                return res.status(404).send("Produto não existe!");
+            }
+            products_list.push(product);
+            balance_cart += product.price;
+        }
+
+        console.log(products_list);
+
+        const shopping = {
+            list_products: products_list,
+            balance : balance_cart,
+            payment : payment,
+        }
+
+        const shopping_user = await db.collection("shopping").findOne({ email });
+        shopping_user.itens.push(shopping);
+
+        await db
+        .collection("shopping")
+        .updateOne(
+            { email },
+            {
+                $set: {
+                    itens: shopping_user.itens,
+                },
+            }
+        );
+
+        cart.itens = [];
+        await db
+        .collection("cart")
+        .updateOne(
+            { email },
+            {
+                $set: {
+                    itens: cart.itens,
+                },
+            }
+        );
+
+        return res.sendStatus(201);
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
 export async function removeItemCart(req,res) {
     const { email } = res.locals.session;
     const productId = req.params.productId;
